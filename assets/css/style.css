@@ -1,11 +1,28 @@
 @import url(reset.css);
+@import url(variables.css);
+
+* {
+  box-sizing: border-box;
+}
 
 .content {
   display: grid;
   grid-template-columns: 30% 70%;
-  border: 1px solid black;
 }
 
+.logo {
+  margin-top: 4.06rem;
+  margin-bottom: 25rem;
+  display: flex;
+  justify-content: center;
+}
+
+.operation-data {
+  font-family: "Barlow";
+  font-weight: 500;
+  color: var(--colors-txt-primary);
+  margin-left: 2rem;
+}
 footer {
   text-align: center;
 }
