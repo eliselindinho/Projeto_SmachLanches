@@ -1,0 +1,11 @@
+@import url(reset.css);
+
+.content {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  border: 1px solid black;
+}
+
+footer {
+  text-align: center;
+}
