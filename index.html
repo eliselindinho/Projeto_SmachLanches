@@ -31,8 +31,47 @@
       <section>
         <header>
           <p>Todos os pedidos</p>
-          <button>+ Novo Pedido</button>
+          <button>
+            <img src="./assets/img/Icons/Vector.png" />Novo Pedido
+          </button>
         </header>
+        <div class="filterData">
+          <select name="selectType">
+            <option></option>
+            <option value="requestNumber">Nº do Pedido</option>
+            <option value="item">Item</option>
+            <option value="type">Tipo</option>
+            <option value="price">Valor</option>
+            <option value="status">Status</option>
+          </select>
+        </div>
+        <div class="orderStatus">
+          <select name="orderStatus">
+            <option></option>
+            <option value="received">Recebido</option>
+            <option value="ready">Pronto</option>
+            <option value="delivered">Entregue</option>
+          </select>
+        </div>
+        <button class="print">Imprimir</button>
+        <section class="snackTable">
+          <table>
+            <thead>
+              <tr>
+                <td><input type="checkbox" />Nº do Pedido</td>
+                <td>Item</td>
+                <td>Tipo</td>
+                <td>Valor</td>
+                <td>Status</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="imageBasket">
+                <td><img src="./assets/img/produtos_cesta_vazia.png" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
       </section>
     </section>
     <footer>
