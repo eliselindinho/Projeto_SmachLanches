@@ -18,7 +18,7 @@ aside {
 }
 
 .logo {
-  margin-top: 4.06rem;
+  margin-top: 3rem;
   display: flex;
   justify-content: center;
 }
@@ -33,6 +33,7 @@ aside {
 
 footer {
   height: 3rem;
+  margin-top: 1rem;
   font-family: "Barlow";
   font-weight: 500;
   color: var(--colors-txt-secudary);
