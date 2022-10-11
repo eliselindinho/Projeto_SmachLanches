@@ -10,9 +10,15 @@
   grid-template-columns: 30% 70%;
 }
 
+aside {
+  height: calc(100vh - 3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .logo {
   margin-top: 4.06rem;
-  margin-bottom: 25rem;
   display: flex;
   justify-content: center;
 }
@@ -22,7 +28,13 @@
   font-weight: 500;
   color: var(--colors-txt-primary);
   margin-left: 2rem;
+  margin-bottom: 2rem;
 }
+
 footer {
+  height: 3rem;
+  font-family: "Barlow";
+  font-weight: 500;
+  color: var(--colors-txt-secudary);
   text-align: center;
 }
