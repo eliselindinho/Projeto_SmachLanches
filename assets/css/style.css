@@ -10,9 +10,31 @@
   grid-template-columns: 30% 70%;
 }
 
+aside {
+  height: calc(100vh - 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.operation-data {
+  font-family: "Barlow";
+  font-weight: 500;
+  color: var(--colors-txt-primary);
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
 header {
   margin-top: 1rem;
 }
+
 .titleHeader {
   font-family: "Barlow";
   font-weight: 700;
@@ -20,6 +42,14 @@ header {
   font-size: 2rem;
   margin-bottom: 1.4rem;
 }
+
+.newOrder,
+.print {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
 .newOrder {
   border: none;
   border-radius: 0.5rem;
@@ -27,12 +57,10 @@ header {
   font-family: "Inter";
   font-weight: 600;
   color: var(--colors-txt-button);
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
   margin-bottom: 2.5rem;
 }
+
 .textFilter {
   font-family: "Inter";
   font-weight: 400;
@@ -52,6 +80,7 @@ header {
 }
 
 .print {
+  align-items: center;
   border: 1px solid #ff8b20;
   border-radius: 0.5rem;
   background-color: transparent;
@@ -59,27 +88,7 @@ header {
   font-weight: 600;
   font-size: 1rem;
   color: var(--color-button-secundary);
-  padding: 0.5rem 0.7rem 0.5rem 0.7rem;
-}
-
-aside {
-  height: calc(100vh - 4rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.logo {
-  margin-top: 3rem;
-  display: flex;
-  justify-content: center;
-}
-
-.operation-data {
-  font-family: "Barlow";
-  font-weight: 500;
-  color: var(--colors-txt-primary);
-  margin-left: 2rem;
-  margin-bottom: 2rem;
+  padding: 0.5rem 0.7rem;
 }
 
 footer {
