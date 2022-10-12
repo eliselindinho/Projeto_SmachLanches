@@ -15,6 +15,10 @@ aside {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: var(--color-background);
+  box-shadow: 47px 0px 28px rgba(0, 0, 0, 0.01),
+    21px 0px 21px rgba(0, 0, 0, 0.02), 5px 0px 11px rgba(0, 0, 0, 0.02),
+    0px 0px 0px rgba(0, 0, 0, 0.02);
 }
 
 .logo {
@@ -32,6 +36,7 @@ aside {
 }
 
 main {
+  margin-left: 1rem;
   margin-right: 2rem;
 }
 
@@ -118,12 +123,43 @@ select {
   align-items: center;
   justify-content: center;
   height: 2rem;
+  width: 100%;
   font-family: "Inter";
   font-weight: 500;
   font-size: 1rem;
   border-top: 1px solid var(--color-thead-border);
   border-bottom: 1px solid var(--color-thead-border);
   background-color: var(--color-thead-background);
+}
+
+.orderNumber {
+  width: 10rem;
+}
+
+.orderItem {
+  width: 24rem;
+}
+
+.orderType {
+  width: 7rem;
+}
+
+.orderPrice,
+.orderStatus {
+  width: 8rem;
+}
+
+#imageBasket {
+  display: flex;
+  justify-content: center;
+}
+
+.textOrderTable {
+  font-family: "Barlow";
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--colors-txt-secudary);
+  text-align: center;
 }
 
 footer {
@@ -133,4 +169,5 @@ footer {
   font-weight: 500;
   color: var(--colors-txt-secudary);
   text-align: center;
+  background-color: var(--color-background);
 }
