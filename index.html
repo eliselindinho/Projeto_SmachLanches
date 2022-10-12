@@ -44,22 +44,24 @@
         </div>
 
         <section class="actions">
-          <select name="selectType" class="select">
-            <option></option>
-            <option value="requestNumber">Nº do Pedido</option>
-            <option value="item">Item</option>
-            <option value="type">Tipo</option>
-            <option value="price">Valor</option>
-            <option value="status">Status</option>
-          </select>
-
-          <div class="orderStatus">
-            <select name="orderStatus" class="select">
+          <div class="actionsSelect">
+            <select name="selectType">
               <option></option>
-              <option value="received">Recebido</option>
-              <option value="ready">Pronto</option>
-              <option value="delivered">Entregue</option>
+              <option value="requestNumber">Nº do Pedido</option>
+              <option value="item">Item</option>
+              <option value="type">Tipo</option>
+              <option value="price">Valor</option>
+              <option value="status">Status</option>
             </select>
+
+            <div class="orderStatus">
+              <select name="orderStatus">
+                <option></option>
+                <option value="received">Recebido</option>
+                <option value="ready">Pronto</option>
+                <option value="delivered">Entregue</option>
+              </select>
+            </div>
           </div>
 
           <button class="print">
@@ -80,7 +82,7 @@
             </thead>
             <tbody>
               <tr id="imageBasket">
-                <td>
+                <td colspan="5">
                   <img src="./assets/img/Icons/produtos_cesta_vazia.png" />
                 </td>
               </tr>
