@@ -1,4 +1,10 @@
 :root {
   --colors-txt-primary: #666666;
   --colors-txt-secudary: #b3b3b3;
+  --colors-txt-terciary: #4d4d4d;
+  --colors-txt-button: #ffffff;
+  --colors-txt-fourth: #666666;
+
+  --color-button-primary: #4a08ff;
+  --color-button-secundary: #ff8b20;
 }

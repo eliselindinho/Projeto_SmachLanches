@@ -30,13 +30,18 @@
       </aside>
       <section>
         <header>
-          <p>Todos os pedidos</p>
-          <button>
-            <img src="./assets/img/Icons/Vector.png" />Novo Pedido
+          <div class="titleHeader">
+            <p>Todos os pedidos</p>
+          </div>
+          <button class="newOrder">
+            <img src="./assets/img/Icons/plusSign.png" />Novo Pedido
           </button>
         </header>
-        <div class="filterData">
-          <select name="selectType">
+        <div class="textFilter">
+          <p>Filtrar por:</p>
+        </div>
+        <section class="actions">
+          <select name="selectType" class="select">
             <option></option>
             <option value="requestNumber">Nº do Pedido</option>
             <option value="item">Item</option>
@@ -44,16 +49,18 @@
             <option value="price">Valor</option>
             <option value="status">Status</option>
           </select>
-        </div>
-        <div class="orderStatus">
-          <select name="orderStatus">
-            <option></option>
-            <option value="received">Recebido</option>
-            <option value="ready">Pronto</option>
-            <option value="delivered">Entregue</option>
-          </select>
-        </div>
-        <button class="print">Imprimir</button>
+          <div class="orderStatus">
+            <select name="orderStatus" class="select">
+              <option></option>
+              <option value="received">Recebido</option>
+              <option value="ready">Pronto</option>
+              <option value="delivered">Entregue</option>
+            </select>
+          </div>
+          <button class="print">
+            <img src="./assets/img/Icons/printer.png" />Imprimir
+          </button>
+        </section>
         <section class="snackTable">
           <table>
             <thead>

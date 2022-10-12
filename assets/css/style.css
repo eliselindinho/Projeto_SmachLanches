@@ -10,13 +10,64 @@
   grid-template-columns: 30% 70%;
 }
 
+header {
+  margin-top: 1rem;
+}
+.titleHeader {
+  font-family: "Barlow";
+  font-weight: 700;
+  color: var(--colors-txt-terciary);
+  font-size: 2rem;
+  margin-bottom: 1.4rem;
+}
+.newOrder {
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--color-button-primary);
+  font-family: "Inter";
+  font-weight: 600;
+  color: var(--colors-txt-button);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+.textFilter {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--colors-txt-fourth);
+  margin-bottom: 0.5rem;
+}
+
+.actions {
+  display: flex;
+}
+
+.select {
+  border: 1px solid #666666;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.3rem 0.3rem 0.3rem;
+}
+
+.print {
+  border: 1px solid #ff8b20;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-button-secundary);
+  padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+}
+
 aside {
   height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
 .logo {
   margin-top: 3rem;
   display: flex;
