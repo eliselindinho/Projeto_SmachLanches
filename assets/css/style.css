@@ -108,6 +108,24 @@ select {
   color: var(--color-button-secundary);
 }
 
+.snackTable {
+  display: flex;
+  justify-content: center;
+}
+
+.headerTable {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 1rem;
+  border-top: 1px solid var(--color-thead-border);
+  border-bottom: 1px solid var(--color-thead-border);
+  background-color: var(--color-thead-background);
+}
+
 footer {
   height: 2rem;
   margin-top: 1rem;
