@@ -5,9 +5,15 @@
   box-sizing: border-box;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 .content {
   display: grid;
   grid-template-columns: 30% 70%;
+  flex: 1;
 }
 
 aside {
