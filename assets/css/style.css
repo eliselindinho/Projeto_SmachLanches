@@ -27,13 +27,13 @@ aside {
     0px 0px 0px rgba(0, 0, 0, 0.02);
 }
 
-.active {
+/* .active {
   display: none;
 }
 
 .inactive {
   display: block;
-}
+} */
 
 .logo {
   margin-top: 3rem;
@@ -129,7 +129,6 @@ select {
 
 .snackTable {
   display: flex;
-  justify-content: center;
 }
 
 .headerTable {
