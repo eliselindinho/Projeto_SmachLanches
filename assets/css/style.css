@@ -27,6 +27,14 @@ aside {
     0px 0px 0px rgba(0, 0, 0, 0.02);
 }
 
+.active {
+  display: none;
+}
+
+.inactive {
+  display: block;
+}
+
 .logo {
   margin-top: 3rem;
   display: flex;
