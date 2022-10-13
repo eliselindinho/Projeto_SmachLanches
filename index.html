@@ -29,7 +29,7 @@
         </div>
       </aside>
 
-      <main class="active">
+      <div class="active main">
         <header>
           <div class="titleHeader">
             <p>Todos os pedidos</p>
@@ -73,7 +73,9 @@
           <table>
             <thead>
               <tr class="headerTable">
-                <td class="orderNumber"><input type="checkbox" />Nº do Pedido</td>
+                <td class="orderNumber">
+                  <input type="checkbox" />Nº do Pedido
+                </td>
                 <td class="orderItem">Item</td>
                 <td class="orderType">Tipo</td>
                 <td class="orderPrice">Valor</td>
@@ -90,11 +92,60 @@
             </tbody>
           </table>
         </section>
-      </main>
+      </div>
 
-      <main class="inactive">
-        
-      </main>
+      <div class="inactive">
+        <header>
+          <div class="titleHeader">
+            <p>Novo pedido</p>
+          </div>
+          <div class="actions">
+            <div class="actionsRadio">
+              <p>Tipo de consumo</p>
+              <label for="delivery">Delivery</label>
+              <input type="radio" id="delivery" />
+              <label for="hall">Salão</label>
+              <input type="radio" id="hall" />
+            </div>
+          </div>
+          <div class="searchForProduct">
+            <p>Buscar produtos</p>
+            <input type="text" placeholder="Código do produto" />
+            <button class="search">Buscar</button>
+          </div>
+          <div class="addProduct">
+            <label for="qty">Quantidade</label>
+            <input type="number" id="qty" placeholder="0" />
+            <label for="product">Produto</label>
+            <input type="text" id="product" placeholder="Nome do produto" />
+            <label for="price">Preço</label>
+            <input type="text" id="price" placeholder="R$00.00" />
+            <button class="add">
+              <img src="./assets/img/Icons/plusSign.png" />Adicionar produto
+            </button>
+          </div>
+        </header>
+        <table>
+          <thead>
+            <tr class="headerTable">
+              <td class="orderItem">Código</td>
+              <td class="orderType">Produto</td>
+              <td class="orderPrice">Quantidade</td>
+              <td class="orderStatus">Valor</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="imageBasket">
+              <td colspan="5">
+                <img src="./assets/img/Icons/produtos_cesta_vazia.png" />
+                <p class="textOrderTable">Não temos pedidos para mostrar</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="cancel">Cancelar</button>
+        <button class="saveOrder">Salvar pedido</button>
+      </div>
     </section>
     <footer>
       <p>
