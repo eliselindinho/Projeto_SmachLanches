@@ -160,6 +160,9 @@ table {
   color: var(--colors-txt-secudary);
   text-align: center;
 }
+.actionsRadio {
+  display: flex;
+}
 
 footer {
   height: 2rem;
