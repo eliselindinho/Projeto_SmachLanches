@@ -188,6 +188,13 @@ input[type="radio"]:checked {
   border: 3px solid #ff8b20;
 }
 
+/*input {
+  height: 2.37rem;
+  border: 1px solid var(--colors-txt-primary);
+  border-radius: 8px;
+  padding: 0.75rem 0.75rem 0.75rem;
+}*/
+
 .searchForProduct {
   margin-bottom: 1.3rem;
 }
@@ -219,6 +226,42 @@ input[type="radio"]:checked {
   font-weight: 600;
   font-size: 1rem;
   color: var(--color-txt-fourth);
+}
+
+.addProduct {
+  display: flex;
+  justify-content: space-between;
+}
+.add,
+.saveOrder {
+  width: 12rem;
+  height: 2.2rem;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--color-button-terciary);
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--colors-txt-button);
+}
+.add:hover {
+  background-color: var(--color-button-secundary);
+}
+.saveOrder:hover {
+  background-color: var(--color-button-primary);
+}
+
+.cancel {
+  height: 2.37rem;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--colors-txt-button);
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-button-primary);
 }
 
 footer {

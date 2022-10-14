@@ -1,19 +1,19 @@
 :root {
-  --color-background: #FFFFFF;
-  
+  --color-background: #ffffff;
+
   --colors-txt-primary: #666666;
-  --colors-txt-secudary: #B3B3B3;
+  --colors-txt-secudary: #b3b3b3;
   --colors-txt-terciary: #4d4d4d;
   --color-txt-fourth: #ff8b20;
-
 
   --colors-txt-button: #ffffff;
 
   --color-button-primary: #4a08ff;
   --color-button-secundary: #ff8b20;
+  --color-button-terciary: #b3b3b3;
 
-  --color-thead-background: #ECECEC;
-  --color-thead-border: #B3B3B3;
+  --color-thead-background: #ececec;
+  --color-thead-border: #b3b3b3;
 
   --colors-input-border: #666666;
 }
