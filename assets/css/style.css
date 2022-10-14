@@ -17,7 +17,7 @@ body {
 }
 
 aside {
-  height: calc(100vh - 4rem);
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -129,6 +129,7 @@ select {
 
 table {
   width: 100%;
+  margin-bottom: 17px;
 }
 
 .snackTable {
@@ -188,13 +189,6 @@ input[type="radio"]:checked {
   border: 3px solid #ff8b20;
 }
 
-/*input {
-  height: 2.37rem;
-  border: 1px solid var(--colors-txt-primary);
-  border-radius: 8px;
-  padding: 0.75rem 0.75rem 0.75rem;
-}*/
-
 .searchForProduct {
   margin-bottom: 1.3rem;
 }
@@ -229,8 +223,10 @@ input[type="radio"]:checked {
 }
 
 .addProduct {
-  display: flex;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: 15% 60.5% 20%;
+  gap: 2%;
+  margin-bottom: 16px;
 }
 .addProduct label {
   display: block;
@@ -249,7 +245,7 @@ input[type="radio"]:checked {
 }
 
 #product {
-  width: auto;
+  width: 100%;
   height: 36px;
   border-radius: 8px;
   border: 1px solid var(--colors-input-border);
@@ -265,9 +261,13 @@ input[type="radio"]:checked {
   background-color: var(--colors-input-background);
   padding-left: 16px;
 }
-
-.add,
-.saveOrder {
+.add {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 32px;
+}
+.add button,
+.save button {
   width: 12rem;
   height: 2.2rem;
   border-radius: 8px;
@@ -279,13 +279,24 @@ input[type="radio"]:checked {
   font-size: 1rem;
   color: var(--colors-txt-button);
 }
-.add:hover {
+.add button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.add button:hover {
   background-color: var(--color-button-secundary);
 }
-.saveOrder:hover {
+.save button:hover {
   background-color: var(--color-button-primary);
 }
 
+.interaction {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
 .cancel {
   height: 2.37rem;
   border-radius: 8px;
@@ -299,6 +310,7 @@ input[type="radio"]:checked {
 }
 
 footer {
+  display: grid;
   height: 2rem;
   margin-top: 1rem;
   font-family: "Barlow";
