@@ -84,7 +84,7 @@ header {
   margin-bottom: 2.5rem;
 }
 
-.textFilter {
+.text {
   font-family: "Inter";
   font-weight: 400;
   font-size: 1rem;
@@ -126,6 +126,7 @@ select {
   font-size: 1rem;
   color: var(--color-button-secundary);
 }
+
 table {
   width: 100%;
 }
@@ -143,6 +144,7 @@ table {
   border-bottom: 1px solid var(--color-thead-border);
   background-color: var(--color-thead-background);
 }
+
 .headerTable td {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -160,9 +162,32 @@ table {
   color: var(--colors-txt-secudary);
   text-align: center;
 }
+
 .actionsRadio {
   display: flex;
+  gap: 32px;
+  margin-bottom: 3rem;
 }
+
+.actionsRadio label {
+  font-family: "Inter";
+  font-weight: 500;
+  size: 1rem;
+}
+
+input[type="radio"]{
+  -webkit-appearance: none;
+  background-color: transparent;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid gray;
+}
+
+input[type="radio"]:checked{
+  border: 3px solid #ff8b20;
+}
+
 
 footer {
   height: 2rem;
