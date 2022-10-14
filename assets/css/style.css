@@ -28,11 +28,11 @@ aside {
 }
 
 .active {
-  display: none;
+  display: block;
 }
 
 .inactive {
-  display: block;
+  display: none;
 }
 
 .logo {
@@ -82,6 +82,10 @@ header {
   color: var(--colors-txt-button);
   padding: 0.5rem 1rem;
   margin-bottom: 2.5rem;
+}
+
+.newOrder:hover {
+  cursor: pointer;
 }
 
 .text {
