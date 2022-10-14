@@ -166,7 +166,7 @@ table {
 .actionsRadio {
   display: flex;
   gap: 32px;
-  margin-bottom: 3rem;
+  margin-bottom: 3%;
 }
 
 .actionsRadio label {
@@ -206,7 +206,7 @@ input[type="radio"]:checked {
 
 .inputSearch input {
   width: 21rem;
-  height: 2rem;
+  height: 38px;
   padding-left: 1rem;
   border-radius: 0.5rem;
   border: 1px solid var(--colors-input-border);
@@ -230,8 +230,42 @@ input[type="radio"]:checked {
 
 .addProduct {
   display: flex;
-  justify-content: space-between;
+  gap: 16px;
 }
+.addProduct label {
+  display: block;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--colors-txt-primary);
+}
+
+#qty {
+  width: 136px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--colors-input-border);
+  padding-left: 16px;
+}
+
+#product {
+  width: auto;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--colors-input-border);
+  padding-left: 16px;
+  background-color: var(--colors-input-background);
+}
+
+#price {
+  width: 182px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--colors-input-border);
+  background-color: var(--colors-input-background);
+  padding-left: 16px;
+}
+
 .add,
 .saveOrder {
   width: 12rem;
