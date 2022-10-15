@@ -11,13 +11,13 @@ body {
 }
 
 .content {
-  height: max-content;
   display: grid;
   grid-template-columns: 30% 70%;
   flex: 1;
 }
 
 aside {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -85,15 +85,12 @@ header {
 }
 
 .newOrder:hover {
+  cursor: pointer;
   background-color: var(--color-button-primary-hover);
 }
 
 button {
   transition: 0.3s;
-}
-
-button:hover {
-  cursor: pointer;
 }
 
 .text {
@@ -140,6 +137,7 @@ select {
 }
 
 .print:hover {
+  cursor: pointer;
   background-color: var(--color-button-secundary-hover);
 }
 
@@ -247,6 +245,7 @@ input[type="radio"]:checked {
 }
 
 .search:hover {
+  cursor: pointer;
   background-color: var(--color-button-secundary-hover);
 }
 
@@ -300,7 +299,6 @@ input[type="radio"]:checked {
 
 .add button,
 .save button {
-  width: 12rem;
   height: 2.2rem;
   border-radius: 8px;
   border: none;
@@ -314,18 +312,23 @@ input[type="radio"]:checked {
 
 .add button {
   display: flex;
+  width: 15rem;
   align-items: center;
   justify-content: center;
   gap: 15px;
 }
 
-.add button:hover {
+.save button {
+  padding: 8px 16px 8px 16px;
+}
+
+/* .add button:hover {
   background-color: var(--color-button-secundary);
 }
 
 .save button:hover {
   background-color: var(--color-button-primary);
-}
+} */
 
 .interaction {
   display: flex;
