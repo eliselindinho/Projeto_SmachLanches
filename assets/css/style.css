@@ -84,6 +84,14 @@ header {
   margin-bottom: 2.5rem;
 }
 
+.newOrder:hover {
+  background-color: var(--color-button-primary-hover);
+}
+
+button {
+  transition: 0.3s;
+}
+
 button:hover {
   cursor: pointer;
 }
@@ -129,6 +137,10 @@ select {
   font-weight: 600;
   font-size: 1rem;
   color: var(--color-button-secundary);
+}
+
+.print:hover {
+  background-color: var(--color-button-secundary-hover);
 }
 
 table {
