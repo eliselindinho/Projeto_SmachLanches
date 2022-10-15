@@ -165,7 +165,7 @@ table {
   padding-bottom: 10px;
 }
 
-#imageBasket img {
+.imageBasket img {
   display: block;
   margin: 0 auto;
 }

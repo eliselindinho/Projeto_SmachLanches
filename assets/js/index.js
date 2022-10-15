@@ -4,6 +4,13 @@ let btnNewOrder = document.querySelector(".newOrder");
 
 let selectType = document.querySelector("#selectType");
 
+let inputSearchProduct = document.querySelector('#inputSearch');
+let btnSearch = document.querySelector('.search');
+let inputQty = document.querySelector('#qty');
+let inputProduct = document.querySelector('#product');
+let inputPrice = document.querySelector('#price');
+let btnAdd = document.querySelector('#add');
+
 
 let newOrder = () => {
     sectionNewOrder.setAttribute("class", "inactive")
