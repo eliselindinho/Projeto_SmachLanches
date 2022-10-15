@@ -273,6 +273,10 @@ input[type="radio"]:checked {
   padding-left: 16px;
 }
 
+#qty:hover {
+  cursor: pointer;
+}
+
 #product {
   width: 100%;
   height: 36px;
