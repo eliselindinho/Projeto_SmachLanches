@@ -11,13 +11,13 @@ body {
 }
 
 .content {
+  height: max-content;
   display: grid;
   grid-template-columns: 30% 70%;
   flex: 1;
 }
 
 aside {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -201,6 +201,10 @@ input[type="radio"] {
   border: 1px solid gray;
 }
 
+input[type="radio"]:hover {
+  cursor: pointer;
+}
+
 input[type="radio"]:checked {
   border: 3px solid #ff8b20;
 }
@@ -223,6 +227,10 @@ input[type="radio"]:checked {
   font-family: "Inter";
 }
 
+.inputSearch input:hover {
+  cursor: pointer;
+}
+
 .search {
   display: flex;
   gap: 1rem;
@@ -238,6 +246,10 @@ input[type="radio"]:checked {
   color: var(--color-txt-fourth);
 }
 
+.search:hover {
+  background-color: var(--color-button-secundary-hover);
+}
+
 .addProduct {
   display: grid;
   grid-template-columns: 15% 60.5% 20%;
@@ -251,6 +263,7 @@ input[type="radio"]:checked {
   font-weight: 400;
   font-size: 1rem;
   color: var(--colors-txt-primary);
+  margin-bottom: 5px;
 }
 
 #qty {
