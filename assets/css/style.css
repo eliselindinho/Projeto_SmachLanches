@@ -84,7 +84,7 @@ header {
   margin-bottom: 2.5rem;
 }
 
-.newOrder:hover {
+button:hover {
   cursor: pointer;
 }
 
@@ -232,6 +232,7 @@ input[type="radio"]:checked {
   gap: 2%;
   margin-bottom: 16px;
 }
+
 .addProduct label {
   display: block;
   font-family: "Inter";
@@ -265,11 +266,13 @@ input[type="radio"]:checked {
   background-color: var(--colors-input-background);
   padding-left: 16px;
 }
+
 .add {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 32px;
 }
+
 .add button,
 .save button {
   width: 12rem;
@@ -283,15 +286,18 @@ input[type="radio"]:checked {
   font-size: 1rem;
   color: var(--colors-txt-button);
 }
+
 .add button {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
 }
+
 .add button:hover {
   background-color: var(--color-button-secundary);
 }
+
 .save button:hover {
   background-color: var(--color-button-primary);
 }
@@ -301,6 +307,7 @@ input[type="radio"]:checked {
   justify-content: flex-end;
   gap: 16px;
 }
+
 .cancel {
   height: 2.37rem;
   border-radius: 8px;
