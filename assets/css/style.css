@@ -191,7 +191,7 @@ table {
 }
 
 input[type="radio"] {
-  -webkit-appearance: none;
+  appearance: none;
   background-color: transparent;
   width: 15px;
   height: 15px;
