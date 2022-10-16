@@ -68,6 +68,10 @@ let trDefaultImage = document.querySelector(".imageBasket");
 let btnCancel = document.querySelector(".cancel");
 let btnSave = document.querySelector("#save");
 
+let codeObject = menu.map((item) => {
+  return item.code;
+});
+
 let newOrder = () => {
   sectionNewOrder.setAttribute("class", "inactive");
   sectionRegisterProduct.setAttribute("class", "active main");
@@ -75,8 +79,7 @@ let newOrder = () => {
 
 let valueInputSearch = () => {
   let valueInputSearchProduct = inputSearchProduct.value;
-
-  console.log(valueInputSearchProduct)
+    console.log(valueInputSearchProduct)
 };
 
 let updateSelect = () => {
@@ -86,5 +89,5 @@ let updateSelect = () => {
 };
 
 btnNewOrder.addEventListener("click", newOrder);
-btnSearch.addEventListener('click', valueInputSearch);
+btnSearch.addEventListener("click", valueInputSearch);
 selectType.addEventListener("change", updateSelect);
