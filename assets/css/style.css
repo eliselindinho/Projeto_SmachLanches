@@ -207,6 +207,16 @@ input[type="radio"]:checked {
   border: 3px solid #ff8b20;
 }
 
+input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+
 .searchForProduct {
   margin-bottom: 1.3rem;
 }

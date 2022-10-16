@@ -73,6 +73,10 @@ let newOrder = () => {
   sectionRegisterProduct.setAttribute("class", "active main");
 };
 
+let filterCode = () => {
+    let filtered = {};
+}
+
 let updateSelect = () => {
   let opValue = selectType.options[selectType.selectedIndex];
   let value = opValue.value;
