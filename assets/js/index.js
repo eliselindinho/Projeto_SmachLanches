@@ -73,9 +73,11 @@ let newOrder = () => {
   sectionRegisterProduct.setAttribute("class", "active main");
 };
 
-let filterCode = () => {
-    let filtered = {};
-}
+let valueInputSearch = () => {
+  let valueInputSearchProduct = inputSearchProduct.value;
+
+  console.log(valueInputSearchProduct)
+};
 
 let updateSelect = () => {
   let opValue = selectType.options[selectType.selectedIndex];
@@ -84,4 +86,5 @@ let updateSelect = () => {
 };
 
 btnNewOrder.addEventListener("click", newOrder);
+btnSearch.addEventListener('click', valueInputSearch);
 selectType.addEventListener("change", updateSelect);
