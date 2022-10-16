@@ -75,8 +75,21 @@ let newOrder = () => {
 
 let valueInputSearch = () => {
   let valueInputSearchProduct = inputSearchProduct.value;
-  let objectProduct = menu.find(product => product.code == valueInputSearchProduct);
-  console.log(objectProduct)
+  let objectProduct = menu.find(
+    (product) => product.code == valueInputSearchProduct
+  );
+  if (objectProduct !== undefined) {
+    inputProduct.setAttribute("placeholder", `${objectProduct.product}`);
+    inputPrice.setAttribute(
+      "placeholder",
+      `${objectProduct.price.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      })}`
+    );
+  } else {
+    alert("Código inválido");
+  }
 };
 
 let updateSelect = () => {
