@@ -53,7 +53,6 @@ let menu = [
 
 let sectionNewOrder = document.querySelector(".active");
 let sectionRegisterProduct = document.querySelector(".inactive");
-
 let btnNewOrder = document.querySelector(".newOrder");
 let selectType = document.querySelector("#selectType");
 
@@ -73,9 +72,12 @@ let newOrder = () => {
   sectionRegisterProduct.setAttribute("class", "active main");
 };
 
+let objectProduct = undefined;
+let order = [{}];
+
 let valueInputSearch = () => {
   let valueInputSearchProduct = inputSearchProduct.value;
-  let objectProduct = menu.find(
+  objectProduct = menu.find(
     (product) => product.code == valueInputSearchProduct
   );
   if (objectProduct !== undefined) {
@@ -92,6 +94,22 @@ let valueInputSearch = () => {
   }
 };
 
+let addProduct = () => {
+  let valueInputQty = inputQty.value;
+  let multiply = valueInputQty * objectProduct.price;
+
+  order.push(objectProduct);
+  tableBody.innerHTML += `<tr>
+                          <td>${objectProduct.code}</td>
+                          <td>${objectProduct.product}</td>
+                          <td>${valueInputQty}</td>
+                          <td>${multiply.toLocaleString("pt-BR", {
+                            style: "currency",
+                            currency: "BRL",
+                          })}</td>
+                          </tr>`;
+};
+
 let updateSelect = () => {
   let opValue = selectType.options[selectType.selectedIndex];
   let value = opValue.value;
@@ -100,4 +118,5 @@ let updateSelect = () => {
 
 btnNewOrder.addEventListener("click", newOrder);
 btnSearch.addEventListener("click", valueInputSearch);
+btnAdd.addEventListener("click", addProduct);
 selectType.addEventListener("change", updateSelect);
