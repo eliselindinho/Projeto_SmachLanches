@@ -63,7 +63,8 @@ let inputProduct = document.querySelector("#product");
 let inputPrice = document.querySelector("#price");
 let btnAdd = document.querySelector("#add");
 let tableBody = document.querySelector(".tableBody");
-let trDefaultImage = document.querySelector(".imageBasket");
+let tableFooter = document.querySelector(".tableFooter");
+let trDefaultImage = document.querySelector(".imgBasket");
 let btnCancel = document.querySelector(".cancel");
 let btnSave = document.querySelector("#save");
 
@@ -73,7 +74,6 @@ let newOrder = () => {
 };
 
 let objectProduct = undefined;
-let order = [{}];
 
 let valueInputSearch = () => {
   let valueInputSearchProduct = inputSearchProduct.value;
@@ -97,8 +97,9 @@ let valueInputSearch = () => {
 let addProduct = () => {
   let valueInputQty = inputQty.value;
   let multiply = valueInputQty * objectProduct.price;
+  trDefaultImage.setAttribute("class", "inactive");
 
-  order.push(objectProduct);
+  cleanForm();
   tableBody.innerHTML += `<tr>
                           <td>${objectProduct.code}</td>
                           <td>${objectProduct.product}</td>
@@ -108,6 +109,13 @@ let addProduct = () => {
                             currency: "BRL",
                           })}</td>
                           </tr>`;
+};
+
+let cleanForm = () => {
+  inputProduct.setAttribute("placeholder", "Nome do produto");
+  inputPrice.setAttribute("placeholder", "R$00.00");
+  inputSearchProduct.value = "";
+  inputQty.value = "";
 };
 
 let updateSelect = () => {
