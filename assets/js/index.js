@@ -120,10 +120,10 @@ let addProduct = () => {
                             currency: "BRL",
                           })}</td>
                           </tr>`;
-  tableFooter.innerHTML = `<td>TOTAL DO PEDIDO: <span>${sum.toLocaleString("pt-BR", {
+  tableFooter.innerHTML = `TOTAL DO PEDIDO: <span>${sum.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL",
-  })}</span></td>`;
+  })}</span>`;
 };
 
 let cleanForm = () => {

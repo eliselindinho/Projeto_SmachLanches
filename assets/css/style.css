@@ -183,23 +183,6 @@ table {
   background-color: #fbfbfb;
 }
 
-.tableFooter {
-  font-family: "Inter";
-  font-size: 1.5rem;
-  color: var(--colors-txt-primary);
-}
-
-.tableFooter span {
-  font-family: "Inter";
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: var(--colors-txt-primary);
-}
-
-.tableFooter td {
-  padding-top: 10px;
-}
-
 .imageBasket img {
   display: block;
   margin: 0 auto;
@@ -364,6 +347,20 @@ input[type="number"] {
   align-items: center;
   justify-content: center;
   gap: 15px;
+}
+
+.tableFooter {
+  font-family: "Inter";
+  font-size: 1.5rem;
+  color: var(--colors-txt-primary);
+  margin-top: 40px;
+}
+
+.tableFooter span {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--colors-txt-primary);
 }
 
 .save button {
