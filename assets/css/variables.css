@@ -5,15 +5,15 @@
   --colors-txt-secudary: #b3b3b3;
   --colors-txt-terciary: #4d4d4d;
   --color-txt-fourth: #ff8b20;
+  --colors-txt-fifth: #999999;
 
   --colors-txt-button: #ffffff;
 
   --color-button-primary: #4a08ff;
   --color-button-secundary: #ff8b20;
   --color-button-terciary: #b3b3b3;
-  --color-button-primary-hover: #2C00A3;
-  --color-button-secundary-hover: #FFF4EB;
-
+  --color-button-primary-hover: #2c00a3;
+  --color-button-secundary-hover: #fff4eb;
 
   --color-thead-background: #ececec;
   --color-thead-border: #b3b3b3;
