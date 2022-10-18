@@ -67,6 +67,8 @@ let tableFooter = document.querySelector(".tableFooter");
 let trDefaultImage = document.querySelector(".imgBasket");
 let btnCancel = document.querySelector(".cancel");
 let btnSave = document.querySelector("#save");
+let arrayMultiply = [];
+let arrayItemsOrder = [];
 
 let newOrder = () => {
   sectionNewOrder.setAttribute("class", "inactive");
@@ -97,9 +99,18 @@ let valueInputSearch = () => {
 let addProduct = () => {
   let valueInputQty = inputQty.value;
   let multiply = valueInputQty * objectProduct.price;
+  arrayMultiply.push(multiply);
+  let sum = arrayMultiply.reduce((inicial, atual) => inicial + atual, 0);
+
   trDefaultImage.setAttribute("class", "inactive");
 
   cleanForm();
+  arrayItemsOrder.push({
+    code: objectProduct.code,
+    product: objectProduct.product,
+    qty: valueInputQty,
+    price: multiply
+  })
   tableBody.innerHTML += `<tr>
                           <td>${objectProduct.code}</td>
                           <td>${objectProduct.product}</td>
@@ -109,6 +120,12 @@ let addProduct = () => {
                             currency: "BRL",
                           })}</td>
                           </tr>`;
+  tableFooter.innerHTML = `<tr>
+                            <td>Total do pedido: ${sum.toLocaleString("pt-BR", {
+                              style: "currency",
+                              currency: "BRL",
+                            })}</td>
+                            </tr>`;
 };
 
 let cleanForm = () => {
