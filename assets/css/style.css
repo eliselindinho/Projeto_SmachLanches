@@ -178,9 +178,26 @@ table {
 }
 
 .tableBody tr:nth-child(odd) {
-  border-top: 1px solid #EDEDED;
-  border-bottom: 1px solid #EDEDED;
-  background-color: #FBFBFB;
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+  background-color: #fbfbfb;
+}
+
+.tableFooter {
+  font-family: "Inter";
+  font-size: 1.5rem;
+  color: var(--colors-txt-primary);
+}
+
+.tableFooter span {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--colors-txt-primary);
+}
+
+.tableFooter td {
+  padding-top: 10px;
 }
 
 .imageBasket img {
