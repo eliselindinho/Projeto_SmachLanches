@@ -56,6 +56,7 @@ let sectionRegisterProduct = document.querySelector(".inactive");
 let btnNewOrder = document.querySelector(".newOrder");
 let selectType = document.querySelector("#selectType");
 
+let inputRadio = document.getElementsByName("options");
 let inputSearchProduct = document.querySelector("#inputSearch");
 let btnSearch = document.querySelector(".search");
 let inputQty = document.querySelector("#qty");
@@ -67,15 +68,25 @@ let tableFooter = document.querySelector(".tableFooter");
 let trDefaultImage = document.querySelector(".imgBasket");
 let btnCancel = document.querySelector(".cancel");
 let btnSave = document.querySelector("#save");
+
+let objectProduct = undefined;
 let arrayMultiply = [];
 let arrayItemsOrder = [];
+let arrayOrders = [];
+let numberOrder = 10000;
 
 let newOrder = () => {
   sectionNewOrder.setAttribute("class", "inactive");
   sectionRegisterProduct.setAttribute("class", "active main");
 };
 
-let objectProduct = undefined;
+let consumptionType = () => {
+  for (i = 0; i < inputRadio.length; i++) {
+    if (inputRadio[i].checked) {
+      return inputRadio[i].value;
+    }
+  }
+};
 
 let valueInputSearch = () => {
   let valueInputSearchProduct = inputSearchProduct.value;
@@ -100,7 +111,7 @@ let addProduct = () => {
   let valueInputQty = inputQty.value;
   let multiply = valueInputQty * objectProduct.price;
   arrayMultiply.push(multiply);
-  let sum = arrayMultiply.reduce((inicial, atual) => inicial + atual, 0);
+  let sum = total();
 
   trDefaultImage.setAttribute("class", "inactive");
 
@@ -111,6 +122,7 @@ let addProduct = () => {
     qty: valueInputQty,
     price: multiply,
   });
+
   tableBody.innerHTML += `<tr>
                           <td>${objectProduct.code}</td>
                           <td>${objectProduct.product}</td>
@@ -120,10 +132,17 @@ let addProduct = () => {
                             currency: "BRL",
                           })}</td>
                           </tr>`;
-  tableFooter.innerHTML = `TOTAL DO PEDIDO: <span>${sum.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-  })}</span>`;
+  tableFooter.innerHTML = `TOTAL DO PEDIDO: <span>${sum.toLocaleString(
+    "pt-BR",
+    {
+      style: "currency",
+      currency: "BRL",
+    }
+  )}</span>`;
+};
+
+let total = () => {
+  return arrayMultiply.reduce((inicial, atual) => inicial + atual, 0);
 };
 
 let cleanForm = () => {
@@ -131,6 +150,22 @@ let cleanForm = () => {
   inputPrice.setAttribute("placeholder", "R$00.00");
   inputSearchProduct.value = "";
   inputQty.value = "";
+};
+
+let saveOrder = () => {
+  numberOrder += 1;
+  arrayOrders.push({
+    numberOrder: numberOrder,
+    items: arrayItemsOrder,
+    tipo: consumptionType(),
+    total: total(),
+    status: "Recebido",
+  });
+  console.log(arrayOrders);
+};
+
+let showProducts = (element) => {
+  console.log(element.qty, element.product);
 };
 
 let updateSelect = () => {
@@ -142,4 +177,5 @@ let updateSelect = () => {
 btnNewOrder.addEventListener("click", newOrder);
 btnSearch.addEventListener("click", valueInputSearch);
 btnAdd.addEventListener("click", addProduct);
+btnSave.addEventListener("click", saveOrder);
 selectType.addEventListener("change", updateSelect);
