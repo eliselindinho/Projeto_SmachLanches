@@ -110,7 +110,6 @@ let valueInputSearch = () => {
 };
 
 let addProduct = () => {
-  arrayItemsOrder = [];
   let valueInputQty = inputQty.value;
   let multiply = valueInputQty * objectProduct.price;
   arrayMultiply.push(multiply);
@@ -143,6 +142,7 @@ let addProduct = () => {
         currency: "BRL",
       }
     )}</span>`;
+
   });
 
   console.log(arrayItemsOrder);
