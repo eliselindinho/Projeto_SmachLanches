@@ -144,6 +144,9 @@ let addProduct = () => {
       currency: "BRL",
     }
   )}</span>`;
+
+  tableBody.setAttribute("class", "tableBody active");
+  tableFooter.setAttribute("class", "tableFooter active");
 };
 
 let total = () => {
@@ -179,6 +182,7 @@ let saveOrder = () => {
   sectionNewOrder.setAttribute("class", "active main");
 
   showOrders();
+  cancelOrder();
 };
 
 let showOrders = () => {
