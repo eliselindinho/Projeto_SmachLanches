@@ -95,6 +95,7 @@ let valueInputSearch = () => {
   objectProduct = menu.find(
     (product) => product.code == valueInputSearchProduct
   );
+
   if (objectProduct !== undefined) {
     inputProduct.setAttribute("placeholder", `${objectProduct.product}`);
     inputPrice.setAttribute(
@@ -125,25 +126,22 @@ let addProduct = () => {
     price: multiply,
   });
 
-  arrayItemsOrder.forEach((element) => {
-    tableBody.innerHTML += `<tr>
-    <td>${element.code}</td>
-    <td>${element.product}</td>
-    <td>${element.qty}</td>
-    <td>${element.price.toLocaleString("pt-BR", {
+  tableBody.innerHTML += `<tr>
+                          <td>${objectProduct.code}</td>
+                          <td>${objectProduct.product}</td>
+                          <td>${valueInputQty}</td>
+                          <td>${multiply.toLocaleString("pt-BR", {
+                            style: "currency",
+                            currency: "BRL",
+                          })}</td>
+                          </tr>`;
+  tableFooter.innerHTML = `TOTAL DO PEDIDO: <span>${sum.toLocaleString(
+    "pt-BR",
+    {
       style: "currency",
       currency: "BRL",
-    })}</td>
-    </tr>`;
-    tableFooter.innerHTML = `TOTAL DO PEDIDO: <span>${sum.toLocaleString(
-      "pt-BR",
-      {
-        style: "currency",
-        currency: "BRL",
-      }
-    )}</span>`;
-
-  });
+    }
+  )}</span>`;
 
   console.log(arrayItemsOrder);
 };
