@@ -55,6 +55,8 @@ let sectionNewOrder = document.querySelector(".active");
 let sectionRegisterProduct = document.querySelector(".inactive");
 let btnNewOrder = document.querySelector(".newOrder");
 let selectType = document.querySelector("#selectType");
+let body = document.querySelector("#tableBody");
+let trImage = document.querySelector(".imgBasket-0");
 
 let inputRadio = document.getElementsByName("options");
 let inputSearchProduct = document.querySelector("#inputSearch");
@@ -108,6 +110,7 @@ let valueInputSearch = () => {
 };
 
 let addProduct = () => {
+  arrayItemsOrder = [];
   let valueInputQty = inputQty.value;
   let multiply = valueInputQty * objectProduct.price;
   arrayMultiply.push(multiply);
@@ -157,15 +160,30 @@ let saveOrder = () => {
   arrayOrders.push({
     numberOrder: numberOrder,
     items: arrayItemsOrder,
-    tipo: consumptionType(),
+    type: consumptionType(),
     total: total(),
     status: "Recebido",
   });
-  console.log(arrayOrders);
+
+  sectionRegisterProduct.setAttribute("class", "inactive");
+  sectionNewOrder.setAttribute("class", "active main");
+
+  showOrders();
 };
 
-let showProducts = (element) => {
-  console.log(element.qty, element.product);
+let showOrders = () => {
+  trImage.setAttribute("class", "inactive");
+  arrayOrders.forEach((element) => {
+    element.items.forEach((item) => {
+      body.innerHTML += `<tr>
+      <td>${element.numberOrder}</td>
+      <td>${item.product}</td>
+      <td>${element.type}</td>
+      <td>${element.total}</td>
+      <td>${element.status}</td>
+</tr>`;
+    });
+  });
 };
 
 let updateSelect = () => {
