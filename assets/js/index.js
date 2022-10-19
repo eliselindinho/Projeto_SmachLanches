@@ -157,6 +157,14 @@ let cleanForm = () => {
   inputQty.value = "";
 };
 
+let cancelOrder = () => {
+  arrayItemsOrder = [];
+  sum = 0;
+  tableBody.setAttribute("class", "inactive");
+  trDefaultImage.setAttribute("class", "imageBasket active");
+  tableFooter.setAttribute("class", "inactive");
+};
+
 let saveOrder = () => {
   numberOrder += 1;
   arrayOrders.push({
@@ -200,5 +208,6 @@ let updateSelect = () => {
 btnNewOrder.addEventListener("click", newOrder);
 btnSearch.addEventListener("click", valueInputSearch);
 btnAdd.addEventListener("click", addProduct);
+btnCancel.addEventListener("click", cancelOrder);
 btnSave.addEventListener("click", saveOrder);
 selectType.addEventListener("change", updateSelect);

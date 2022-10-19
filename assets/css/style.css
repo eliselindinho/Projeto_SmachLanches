@@ -185,7 +185,7 @@ table {
 
 .imageBasket img {
   display: block;
-  margin: 0 auto;
+  margin: auto auto;
 }
 
 .textOrderTable {
