@@ -126,22 +126,26 @@ let addProduct = () => {
     price: multiply,
   });
 
-  tableBody.innerHTML += `<tr>
-                          <td>${objectProduct.code}</td>
-                          <td>${objectProduct.product}</td>
-                          <td>${valueInputQty}</td>
-                          <td>${multiply.toLocaleString("pt-BR", {
-                            style: "currency",
-                            currency: "BRL",
-                          })}</td>
-                          </tr>`;
-  tableFooter.innerHTML = `TOTAL DO PEDIDO: <span>${sum.toLocaleString(
-    "pt-BR",
-    {
+  arrayItemsOrder.forEach((element) => {
+    tableBody.innerHTML += `<tr>
+    <td>${element.code}</td>
+    <td>${element.product}</td>
+    <td>${element.qty}</td>
+    <td>${element.price.toLocaleString("pt-BR", {
       style: "currency",
       currency: "BRL",
-    }
-  )}</span>`;
+    })}</td>
+    </tr>`;
+    tableFooter.innerHTML = `TOTAL DO PEDIDO: <span>${sum.toLocaleString(
+      "pt-BR",
+      {
+        style: "currency",
+        currency: "BRL",
+      }
+    )}</span>`;
+  });
+
+  console.log(arrayItemsOrder);
 };
 
 let total = () => {
@@ -169,6 +173,7 @@ let saveOrder = () => {
   sectionNewOrder.setAttribute("class", "active main");
 
   showOrders();
+  resetPage();
 };
 
 let showOrders = () => {
@@ -187,6 +192,12 @@ let showOrders = () => {
 </tr>`;
     });
   });
+};
+
+let resetPage = () => {
+  arrayItemsOrder = [];
+  sum = 0;
+  console.log(arrayItemsOrder, sum);
 };
 
 let updateSelect = () => {
