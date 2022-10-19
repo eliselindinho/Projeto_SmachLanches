@@ -377,7 +377,7 @@ input[type="number"] {
   cursor: pointer;
 }
 
-.cancel button:hover {
+#cancel:hover {
   cursor: pointer;
 }
 
@@ -387,7 +387,7 @@ input[type="number"] {
   gap: 16px;
 }
 
-.cancel {
+#cancel {
   height: 2.37rem;
   border-radius: 8px;
   border: none;

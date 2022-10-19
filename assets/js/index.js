@@ -68,7 +68,7 @@ let btnAdd = document.querySelector("#add");
 let tableBody = document.querySelector(".tableBody");
 let tableFooter = document.querySelector(".tableFooter");
 let trDefaultImage = document.querySelector(".imgBasket");
-let btnCancel = document.querySelector(".cancel");
+let btnCancel = document.querySelector("#cancel");
 let btnSave = document.querySelector("#save");
 
 let objectProduct = undefined;
@@ -78,6 +78,8 @@ let arrayOrders = [];
 let numberOrder = 10000;
 
 let newOrder = () => {
+  arrayItemsOrder = [];
+  sum = 0;
   sectionNewOrder.setAttribute("class", "inactive");
   sectionRegisterProduct.setAttribute("class", "active main");
 };
@@ -142,8 +144,6 @@ let addProduct = () => {
       currency: "BRL",
     }
   )}</span>`;
-
-  console.log(arrayItemsOrder);
 };
 
 let total = () => {
@@ -171,7 +171,6 @@ let saveOrder = () => {
   sectionNewOrder.setAttribute("class", "active main");
 
   showOrders();
-  resetPage();
 };
 
 let showOrders = () => {
@@ -190,12 +189,6 @@ let showOrders = () => {
 </tr>`;
     });
   });
-};
-
-let resetPage = () => {
-  arrayItemsOrder = [];
-  sum = 0;
-  console.log(arrayItemsOrder, sum);
 };
 
 let updateSelect = () => {
