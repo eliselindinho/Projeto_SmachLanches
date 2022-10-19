@@ -76,6 +76,7 @@ let arrayMultiply = [];
 let arrayItemsOrder = [];
 let arrayOrders = [];
 let numberOrder = 10000;
+let sum = 0;
 
 let newOrder = () => {
   arrayItemsOrder = [];
@@ -116,7 +117,7 @@ let addProduct = () => {
   let valueInputQty = inputQty.value;
   let multiply = valueInputQty * objectProduct.price;
   arrayMultiply.push(multiply);
-  let sum = total();
+  sum = total();
 
   trDefaultImage.setAttribute("class", "inactive");
 
@@ -161,8 +162,9 @@ let cleanForm = () => {
 };
 
 let cancelOrder = () => {
+  tableBody.innerHTML = "";
   arrayItemsOrder = [];
-  sum = 0;
+  arrayMultiply = [];
   tableBody.setAttribute("class", "inactive");
   trDefaultImage.setAttribute("class", "imageBasket active");
   tableFooter.setAttribute("class", "inactive");
@@ -188,18 +190,28 @@ let saveOrder = () => {
 let showOrders = () => {
   trImage.setAttribute("class", "inactive");
   arrayOrders.forEach((element) => {
-    element.items.forEach((item) => {
-      body.innerHTML += `<tr>
-      <td>${element.numberOrder}</td>
-      <td>${item.qty} - ${item.product}</td>
-      <td>${element.type}</td>
-      <td>${element.total.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL",
-      })}</td>
-      <td>${element.status}</td>
-</tr>`;
+    let row = `<tr id="order-${element.numberOrder}"> </tr>`;
+    let qtyColumn = "";
+    let columns = "";
+    body.innerHTML += row;
+    element.items.forEach((item, index) => {
+      if (index === 0) {
+        columns = `<td>${element.numberOrder}</td>
+        <td>${element.type}</td>
+        <td>${element.total.toLocaleString("pt-BR", {
+          style: "currency",
+          currency: "BRL",
+        })}</td>
+        <td>${element.status}</td>`;
+        qtyColumn = qtyColumn + `<td>${item.qty} - ${item.product}`;
+      } else if (index !== element.items.length - 1) {
+        qtyColumn = qtyColumn + `${item.qty} - ${item.product}`;
+      } else {
+        qtyColumn = qtyColumn + `${item.qty} - ${item.product} </td>`;
+      }
     });
+    let idTr = document.getElementById(`order-${element.numberOrder}`);
+    idTr.innerHTML = qtyColumn + columns;
   });
 };
 
