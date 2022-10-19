@@ -177,9 +177,12 @@ let showOrders = () => {
     element.items.forEach((item) => {
       body.innerHTML += `<tr>
       <td>${element.numberOrder}</td>
-      <td>${item.product}</td>
+      <td>${item.qty} - ${item.product}</td>
       <td>${element.type}</td>
-      <td>${element.total}</td>
+      <td>${element.total.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      })}</td>
       <td>${element.status}</td>
 </tr>`;
     });
