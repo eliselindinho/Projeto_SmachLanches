@@ -196,8 +196,7 @@ let showOrders = () => {
     body.innerHTML += row;
     element.items.forEach((item, index) => {
       if (index === 0) {
-        columns = `<td>${element.numberOrder}</td>
-        <td>${element.type}</td>
+        columns = `<td>${element.type}</td>
         <td>${element.total.toLocaleString("pt-BR", {
           style: "currency",
           currency: "BRL",
@@ -211,7 +210,7 @@ let showOrders = () => {
       }
     });
     let idTr = document.getElementById(`order-${element.numberOrder}`);
-    idTr.innerHTML = qtyColumn + columns;
+    idTr.innerHTML = numberOrder + qtyColumn + columns;
   });
 };
 
