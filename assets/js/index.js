@@ -55,7 +55,7 @@ let sectionNewOrder = document.querySelector(".active");
 let sectionRegisterProduct = document.querySelector(".inactive");
 let btnNewOrder = document.querySelector(".newOrder");
 let selectType = document.querySelector("#selectType");
-let body = document.querySelector("#tableBody");
+let bodyTable = document.querySelector("#tableBody");
 let trImage = document.querySelector(".imgBasket-0");
 
 let inputRadio = document.getElementsByName("options");
@@ -188,30 +188,42 @@ let saveOrder = () => {
 };
 
 let showOrders = () => {
-  trImage.setAttribute("class", "inactive");
+  trImage.setAttribute("hidden", "true");
+  bodyTable.innerHTML = ""
   arrayOrders.forEach((element) => {
-    let row = `<tr id="order-${element.numberOrder}"> </tr>`;
+    let row = `<tr>`;
     let qtyColumn = "";
     let columns = "";
-    body.innerHTML += row;
-    element.items.forEach((item, index) => {
-      if (index === 0) {
-        columns = `<td>${element.type}</td>
-        <td>${element.total.toLocaleString("pt-BR", {
-          style: "currency",
-          currency: "BRL",
-        })}</td>
-        <td>${element.status}</td>`;
-        qtyColumn = qtyColumn + `<td>${item.qty} - ${item.product}`;
-      } else if (index !== element.items.length - 1) {
-        qtyColumn = qtyColumn + `${item.qty} - ${item.product}`;
-      } else {
-        qtyColumn = qtyColumn + `${item.qty} - ${item.product} </td>`;
-      }
+    bodyTable.innerHTML += row;
+    bodyTable.innerHTML += `<td id='numberOrder_'${element.numberOrder}>${element.numberOrder}</td>`;
+    bodyTable.innerHTML += `<td>`
+    element.items.forEach((item) => {
+      bodyTable.innerHTML += `${item.qty} - ${item.product}</br>`
+
+      // if (index === 0) {
+      //   columns = `<td>${element.type}</td>
+      //   <td>${element.total.toLocaleString("pt-BR", {
+      //     style: "currency",
+      //     currency: "BRL",
+      //   })}</td>
+      //   <td>${element.status}</td>`;
+      //   qtyColumn = qtyColumn + `<td>${item.qty} - ${item.product}`;
+      // } else if (index !== element.items.length - 1) {
+      //   qtyColumn = qtyColumn + `${item.qty} - ${item.product}`;
+      // } else {
+      //   qtyColumn = qtyColumn + `${item.qty} - ${item.product} </td>`;
+      // }
     });
-    let idTr = document.getElementById(`order-${element.numberOrder}`);
-    idTr.innerHTML = numberOrder + qtyColumn + columns;
+    bodyTable.innerHTML += `</td>`
+    bodyTable.innerHTML += `<td>${element.type}</td>
+    <td>${element.total}</td>
+    <td>${element.status}</td>`
+    bodyTable.innerHTML += `</tr>`
+    // let idTr = document.getElementById(`order-${element.numberOrder}`);
+    // idTr.innerHTML = numberOrder + qtyColumn + columns;
   });
+  console.log(arrayOrders)
+  console.log(bodyTable.innerHTML)
 };
 
 let updateSelect = () => {
