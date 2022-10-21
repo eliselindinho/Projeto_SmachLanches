@@ -114,6 +114,7 @@ let valueInputSearch = () => {
 };
 
 let addProduct = () => {
+  valueInputSearch();
   let valueInputQty = inputQty.value;
   let multiply = valueInputQty * objectProduct.price;
   arrayMultiply.push(multiply);
@@ -128,6 +129,8 @@ let addProduct = () => {
     qty: valueInputQty,
     price: multiply,
   });
+
+  
 
   tableBody.innerHTML += `<tr>
                           <td>${objectProduct.code}</td>
@@ -189,41 +192,24 @@ let saveOrder = () => {
 
 let showOrders = () => {
   trImage.setAttribute("hidden", "true");
-  bodyTable.innerHTML = ""
+  let template = "";
   arrayOrders.forEach((element) => {
-    let row = `<tr>`;
-    let qtyColumn = "";
-    let columns = "";
-    bodyTable.innerHTML += row;
-    bodyTable.innerHTML += `<td id='numberOrder_'${element.numberOrder}>${element.numberOrder}</td>`;
-    bodyTable.innerHTML += `<td>`
+    template += `<tr id='numberOrder_'${element.numberOrder}>`;
+    template += `<td>${element.numberOrder}</td>`;
+    template += "<td>";
     element.items.forEach((item) => {
-      bodyTable.innerHTML += `${item.qty} - ${item.product}</br>`
-
-      // if (index === 0) {
-      //   columns = `<td>${element.type}</td>
-      //   <td>${element.total.toLocaleString("pt-BR", {
-      //     style: "currency",
-      //     currency: "BRL",
-      //   })}</td>
-      //   <td>${element.status}</td>`;
-      //   qtyColumn = qtyColumn + `<td>${item.qty} - ${item.product}`;
-      // } else if (index !== element.items.length - 1) {
-      //   qtyColumn = qtyColumn + `${item.qty} - ${item.product}`;
-      // } else {
-      //   qtyColumn = qtyColumn + `${item.qty} - ${item.product} </td>`;
-      // }
+      template += `${item.qty} - ${item.product} </br>`;
     });
-    bodyTable.innerHTML += `</td>`
-    bodyTable.innerHTML += `<td>${element.type}</td>
-    <td>${element.total}</td>
-    <td>${element.status}</td>`
-    bodyTable.innerHTML += `</tr>`
-    // let idTr = document.getElementById(`order-${element.numberOrder}`);
-    // idTr.innerHTML = numberOrder + qtyColumn + columns;
+    template += "</td>";
+    template += `<td>${element.type}</td>`;
+    template += `<td>${element.total.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    })}</td>`;
+    template += `<td>${element.status}</td>`;
+    template += "</tr>";
   });
-  console.log(arrayOrders)
-  console.log(bodyTable.innerHTML)
+  bodyTable.innerHTML = template;
 };
 
 let updateSelect = () => {
