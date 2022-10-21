@@ -130,7 +130,7 @@ let addProduct = () => {
     price: multiply,
   });
 
-  
+
 
   tableBody.innerHTML += `<tr>
                           <td>${objectProduct.code}</td>
@@ -206,7 +206,7 @@ let showOrders = () => {
       style: "currency",
       currency: "BRL",
     })}</td>`;
-    template += `<td>${element.status}</td>`;
+    template += `<td><button>${element.status}</button></td>`;
     template += "</tr>";
   });
   bodyTable.innerHTML = template;
