@@ -55,6 +55,7 @@ let sectionNewOrder = document.querySelector(".active");
 let sectionRegisterProduct = document.querySelector(".inactive");
 let btnNewOrder = document.querySelector(".newOrder");
 let selectType = document.querySelector("#selectType");
+let selectStatus = document.querySelector("#selectStatus");
 let bodyTable = document.querySelector("#tableBody");
 let trImage = document.querySelector(".imgBasket-0");
 
@@ -75,6 +76,8 @@ let objectProduct = undefined;
 let arrayMultiply = [];
 let arrayItemsOrder = [];
 let arrayOrders = [];
+let filteredByType = [];
+let filteredByStatus = [];
 let numberOrder = 10000;
 let sum = 0;
 
@@ -229,7 +232,7 @@ let changeStatusButton = (orderNumber) => {
 
 let updateOrderTable = (array = arrayOrders) => {
   let trTds = "";
-  array.forEach(element => {
+  array.forEach((element) => {
     trTds += `<tr id='numberOrder_'${element.numberOrder}>`;
     trTds += `<td><input type="checkbox"> ${element.numberOrder}</td>`;
     trTds += "<td>";
@@ -242,17 +245,58 @@ let updateOrderTable = (array = arrayOrders) => {
       style: "currency",
       currency: "BRL",
     })}</td>`;
-    trTds += `<td><button class='btnStatus ${element.status == 'Recebido' ? "" : element.status === "Pronto" ? 'ready' : 'delivered'}' onclick="changeStatusButton(${element.numberOrder})">${element.status}</button></td>`;
+    trTds += `<td><button class='btnStatus ${
+      element.status == "Recebido"
+        ? ""
+        : element.status === "Pronto"
+        ? "ready"
+        : "delivered"
+    }' onclick="changeStatusButton(${element.numberOrder})">${
+      element.status
+    }</button></td>`;
     trTds += "</tr>";
   });
 
   bodyTable.innerHTML = trTds;
-}
+};
 
-let updateSelect = () => {
-  let opValue = selectType.options[selectType.selectedIndex];
-  let value = opValue.value;
-  console.log(value);
+let filterOrdersByType = () => {
+  let valueSelectType = selectType.value;
+
+  if (valueSelectType == "type") {
+    updateOrderTable();
+  } else if (valueSelectType == "delivery") {
+    filteredByType = arrayOrders.filter(
+      (element) => element.type == "Delivery"
+    );
+    updateOrderTable(filteredByType);
+  } else if (valueSelectType == "hall") {
+    filteredByType = arrayOrders.filter((element) => element.type == "Salão");
+    updateOrderTable(filteredByType);
+  }
+};
+
+let filterOrdersByStatus = () => {
+  let valueSelectStatus = selectStatus.value;
+
+  if (valueSelectStatus == "status") {
+    updateOrderTable();
+  } else if (valueSelectStatus == "received") {
+    filteredByStatus = arrayOrders.filter(
+      (element) => element.status == "Recebido"
+    );
+    updateOrderTable(filteredByStatus);
+  } else if (valueSelectStatus == "ready") {
+    filteredByStatus = arrayOrders.filter(
+      (element) => element.status == "Pronto"
+    );
+    updateOrderTable(filteredByStatus);
+  } else if (valueSelectStatus == "delivered") {
+    filteredByStatus = arrayOrders.filter(
+      (element) => element.status == "Entregue"
+    );
+    updateOrderTable(filteredByStatus);
+  }
 };
 
 btnNewOrder.addEventListener("click", newOrder);
@@ -260,4 +304,5 @@ btnSearch.addEventListener("click", valueInputSearch);
 btnAdd.addEventListener("click", addProduct);
 btnCancel.addEventListener("click", cancelOrder);
 btnSave.addEventListener("click", saveOrder);
-selectType.addEventListener("change", updateSelect);
+selectType.addEventListener("change", filterOrdersByType);
+selectStatus.addEventListener("change", filterOrdersByStatus);
