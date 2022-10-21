@@ -120,8 +120,6 @@ let addProduct = () => {
   arrayMultiply.push(multiply);
   sum = total();
 
-  trDefaultImage.setAttribute("class", "inactive");
-
   cleanForm();
   arrayItemsOrder.push({
     code: objectProduct.code,
@@ -130,27 +128,30 @@ let addProduct = () => {
     price: multiply,
   });
 
-
-
-  tableBody.innerHTML += `<tr>
-                          <td>${objectProduct.code}</td>
-                          <td>${objectProduct.product}</td>
-                          <td>${valueInputQty}</td>
-                          <td>${multiply.toLocaleString("pt-BR", {
-                            style: "currency",
-                            currency: "BRL",
-                          })}</td>
-                          </tr>`;
-  tableFooter.innerHTML = `TOTAL DO PEDIDO: <span>${sum.toLocaleString(
-    "pt-BR",
-    {
+  if (valueInputQty == "") {
+    alert("Digite uma quantidade");
+  } else {
+    trDefaultImage.setAttribute("class", "inactive");
+    tableBody.innerHTML += `<tr>
+    <td>${objectProduct.code}</td>
+    <td>${objectProduct.product}</td>
+    <td>${valueInputQty}</td>
+    <td>${multiply.toLocaleString("pt-BR", {
       style: "currency",
       currency: "BRL",
-    }
-  )}</span>`;
+    })}</td>
+    </tr>`;
+    tableFooter.innerHTML = `TOTAL DO PEDIDO: <span>${sum.toLocaleString(
+      "pt-BR",
+      {
+        style: "currency",
+        currency: "BRL",
+      }
+    )}</span>`;
 
-  tableBody.setAttribute("class", "tableBody active");
-  tableFooter.setAttribute("class", "tableFooter active");
+    tableBody.setAttribute("class", "tableBody active");
+    tableFooter.setAttribute("class", "tableFooter active");
+  }
 };
 
 let total = () => {
