@@ -207,11 +207,47 @@ let showOrders = () => {
       style: "currency",
       currency: "BRL",
     })}</td>`;
-    template += `<td><button>${element.status}</button></td>`;
+    template += `<td><button class='btnStatus' onclick="changeStatusButton(${element.numberOrder})">${element.status}</button></td>`;
     template += "</tr>";
   });
   bodyTable.innerHTML = template;
 };
+
+let changeStatusButton = (orderNumber) => {
+  arrayOrders.map((order) => {
+    if (order.numberOrder == orderNumber) {
+      if (order.status == "Recebido") {
+        order.status = "Pronto";
+      } else if (order.status == "Pronto") {
+        order.status = "Entregue";
+      }
+    }
+    return order;
+  });
+  updateOrderTable();
+};
+
+let updateOrderTable = (array = arrayOrders) => {
+  let trTds = "";
+  array.forEach(element => {
+    trTds += `<tr id='numberOrder_'${element.numberOrder}>`;
+    trTds += `<td><input type="checkbox"> ${element.numberOrder}</td>`;
+    trTds += "<td>";
+    element.items.forEach((item) => {
+      trTds += `${item.qty} - ${item.product} </br>`;
+    });
+    trTds += "</td>";
+    trTds += `<td>${element.type}</td>`;
+    trTds += `<td>${element.total.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    })}</td>`;
+    trTds += `<td><button class='btnStatus ${element.status == 'Recebido' ? "" : element.status === "Pronto" ? 'ready' : 'delivered'}' onclick="changeStatusButton(${element.numberOrder})">${element.status}</button></td>`;
+    trTds += "</tr>";
+  });
+
+  bodyTable.innerHTML = trTds;
+}
 
 let updateSelect = () => {
   let opValue = selectType.options[selectType.selectedIndex];
