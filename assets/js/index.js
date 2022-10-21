@@ -199,7 +199,7 @@ let showOrders = () => {
   let template = "";
   arrayOrders.forEach((element) => {
     template += `<tr id='numberOrder_'${element.numberOrder}>`;
-    template += `<td><input type="checkbox"> ${element.numberOrder}</td>`;
+    template += `<td><input type="checkbox" onclick="selectCheckbox()"> ${element.numberOrder}</td>`;
     template += "<td>";
     element.items.forEach((item) => {
       template += `${item.qty} - ${item.product} </br>`;
@@ -234,7 +234,7 @@ let updateOrderTable = (array = arrayOrders) => {
   let trTds = "";
   array.forEach((element) => {
     trTds += `<tr id='numberOrder_'${element.numberOrder}>`;
-    trTds += `<td><input type="checkbox"> ${element.numberOrder}</td>`;
+    trTds += `<td><input type="checkbox" onclick="selectCheckbox()"> ${element.numberOrder}</td>`;
     trTds += "<td>";
     element.items.forEach((item) => {
       trTds += `${item.qty} - ${item.product} </br>`;
@@ -298,6 +298,10 @@ let filterOrdersByStatus = () => {
     updateOrderTable(filteredByStatus);
   }
 };
+
+let selectCheckbox = () => {
+  console.log('oi')
+}
 
 btnNewOrder.addEventListener("click", newOrder);
 btnSearch.addEventListener("click", valueInputSearch);
