@@ -196,7 +196,7 @@ let showOrders = () => {
   let template = "";
   arrayOrders.forEach((element) => {
     template += `<tr id='numberOrder_'${element.numberOrder}>`;
-    template += `<td>${element.numberOrder}</td>`;
+    template += `<td><input type="checkbox"> ${element.numberOrder}</td>`;
     template += "<td>";
     element.items.forEach((item) => {
       template += `${item.qty} - ${item.product} </br>`;

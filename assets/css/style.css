@@ -160,24 +160,23 @@ table {
   background-color: var(--color-thead-background);
 }
 
-.headerTable td {
+.headerTable td,
+#tableBody td,
+.tableBody td {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.tableBody {
+.tableBody,
+#tableBody {
   font-family: "Inter";
   font-weight: 500;
   font-size: 1rem;
   color: var(--colors-txt-fifth);
 }
 
-.tableBody td {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.tableBody tr:nth-child(odd) {
+.tableBody tr:nth-child(odd),
+#tableBody tr:nth-child(odd) {
   border-top: 1px solid #ededed;
   border-bottom: 1px solid #ededed;
   background-color: #fbfbfb;
