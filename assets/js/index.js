@@ -348,6 +348,9 @@ let deleteOrder = () => {
   }
 
   alert(feedBackDelete)
+
+  userInteractionSection.setAttribute("class", "active headerFunctions");
+  sectionBtnDelete.setAttribute("class", "inactive");
 };
 
 btnNewOrder.addEventListener("click", newOrder);
