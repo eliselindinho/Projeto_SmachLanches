@@ -58,6 +58,7 @@ let userInteractionSection = document.querySelector(".headerFunctions");
 let selectType = document.querySelector("#selectType");
 let selectStatus = document.querySelector("#selectStatus");
 let bodyTable = document.querySelector("#tableBody");
+let firstCheckbox = document.querySelector("#checkboxHeader");
 let trImage = document.querySelector(".imgBasket-0");
 let sectionBtnDelete = document.querySelector(".delete");
 let btnDelete = document.querySelector("#btnDelete");
@@ -316,6 +317,15 @@ let filterOrdersByStatus = () => {
   }
 };
 
+let selectAllCheckbox = () => {
+  selectCheckbox();
+  let allInputCheckbox = document.querySelectorAll('input[type="checkbox"]');
+
+  for (let i = 0; i < allInputCheckbox.length; i++) {
+    allInputCheckbox[i].checked = true;
+  }
+};
+
 let selectCheckbox = () => {
   userInteractionSection.setAttribute("class", "inactive");
   sectionBtnDelete.setAttribute("class", "active delete");
@@ -347,7 +357,7 @@ let deleteOrder = () => {
     feedBackDelete = "Pedido excluído com sucesso";
   }
 
-  alert(feedBackDelete)
+  alert(feedBackDelete);
 
   userInteractionSection.setAttribute("class", "active headerFunctions");
   sectionBtnDelete.setAttribute("class", "inactive");
@@ -360,4 +370,5 @@ btnCancel.addEventListener("click", cancelOrder);
 btnSave.addEventListener("click", saveOrder);
 selectType.addEventListener("change", filterOrdersByType);
 selectStatus.addEventListener("change", filterOrdersByStatus);
+firstCheckbox.addEventListener("click", selectAllCheckbox);
 btnDelete.addEventListener("click", deleteOrder);
