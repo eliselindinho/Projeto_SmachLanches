@@ -323,6 +323,7 @@ let selectCheckbox = () => {
 
 let deleteOrder = () => {
   let message = "Deseja realmente excluir esse item?";
+  let feedBackDelete = "";
   let inputChecked = document.querySelectorAll(
     'input[type="checkbox"]:checked'
   );
@@ -337,9 +338,16 @@ let deleteOrder = () => {
         (order) => order.numberOrder != element.parentNode.textContent
       );
     });
-
     updateOrderTable();
   }
+
+  if (inputChecked.length > 1) {
+    feedBackDelete = "Pedidos excluídos com sucesso";
+  } else {
+    feedBackDelete = "Pedido excluído com sucesso";
+  }
+
+  alert(feedBackDelete)
 };
 
 btnNewOrder.addEventListener("click", newOrder);
