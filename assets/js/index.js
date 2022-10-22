@@ -157,7 +157,7 @@ let addProduct = () => {
       }
     )}</span>`;
 
-    tableBody.setAttribute("class", "tableBody active");
+    tableBody.setAttribute("class", "tableBody");
     tableFooter.setAttribute("class", "tableFooter active");
   }
 };
