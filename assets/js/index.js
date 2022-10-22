@@ -214,6 +214,8 @@ let showOrders = () => {
     template += "</tr>";
   });
   bodyTable.innerHTML = template;
+
+  updateOrderTable();
 };
 
 let changeStatusButton = (orderNumber) => {
@@ -245,19 +247,31 @@ let updateOrderTable = (array = arrayOrders) => {
       style: "currency",
       currency: "BRL",
     })}</td>`;
-    trTds += `<td><button class='btnStatus ${
-      element.status == "Recebido"
-        ? ""
-        : element.status === "Pronto"
-        ? "ready"
-        : "delivered"
-    }' onclick="changeStatusButton(${element.numberOrder})">${
+    trTds += `<td><button class='btnStatus ${validStatus(
+      element.status
+    )}' onclick="changeStatusButton(${element.numberOrder})">${
       element.status
     }</button></td>`;
     trTds += "</tr>";
   });
 
   bodyTable.innerHTML = trTds;
+};
+
+let validStatus = (status) => {
+  let statusClass = "";
+  switch (status) {
+    case "Recebido":
+      statusClass = "received";
+      break;
+    case "Pronto":
+      statusClass = "ready";
+      break;
+    case "Entregue":
+      statusClass = "delivered";
+      break;
+  }
+  return statusClass;
 };
 
 let filterOrdersByType = () => {
@@ -300,8 +314,8 @@ let filterOrdersByStatus = () => {
 };
 
 let selectCheckbox = () => {
-  console.log('oi')
-}
+  console.log("oi");
+};
 
 btnNewOrder.addEventListener("click", newOrder);
 btnSearch.addEventListener("click", valueInputSearch);
