@@ -182,7 +182,7 @@ table {
   background-color: #fbfbfb;
 }
 
-td button {
+.btnStatus {
   width: 88px;
   height: 30px;
   border: 1px solid var(--color-button-border-primary);
@@ -190,6 +190,18 @@ td button {
   background-color: var(--color-button-terciary);
   font-family: "Inter";
   font-weight: 600;
+}
+
+.ready {
+  border: 1px solid var(--color-button-border-secundary);
+  background-color: var(--color-button-fourth);
+  color: var(--color-button-border-secundary);
+}
+
+.delivered {
+  border: 1px solid var(--color-button-border-terciary);
+  background-color: #85ffa0;
+  color: var(--color-button-border-terciary);
 }
 
 td button:hover {
