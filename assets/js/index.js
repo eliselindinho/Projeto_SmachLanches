@@ -52,8 +52,9 @@ let menu = [
 ];
 
 let sectionNewOrder = document.querySelector(".active");
-let sectionRegisterProduct = document.querySelector(".inactive");
+let sectionRegisterProduct = document.querySelector(".secondSection");
 let btnNewOrder = document.querySelector(".newOrder");
+let userInteractionSection = document.querySelector(".headerFunctions");
 let selectType = document.querySelector("#selectType");
 let selectStatus = document.querySelector("#selectStatus");
 let bodyTable = document.querySelector("#tableBody");
@@ -238,7 +239,7 @@ let updateOrderTable = (array = arrayOrders) => {
   let trTds = "";
   array.forEach((element) => {
     trTds += `<tr id='numberOrder_'${element.numberOrder}>`;
-    trTds += `<td><input type="checkbox" onclick="selectCheckbox()"> ${element.numberOrder}</td>`;
+    trTds += `<td><input type="checkbox" id='checkbox-${element.numberOrder}' onclick="selectCheckbox()"> ${element.numberOrder}</td>`;
     trTds += "<td>";
     element.items.forEach((item) => {
       trTds += `${item.qty} - ${item.product} </br>`;
@@ -316,7 +317,29 @@ let filterOrdersByStatus = () => {
 };
 
 let selectCheckbox = () => {
-  console.log("oi");
+  userInteractionSection.setAttribute("class", "inactive");
+  sectionBtnDelete.setAttribute("class", "active delete");
+};
+
+let deleteOrder = () => {
+  let message = "Deseja realmente excluir esse item?";
+  let inputChecked = document.querySelectorAll(
+    'input[type="checkbox"]:checked'
+  );
+
+  if (inputChecked.length > 1) {
+    message = "Deseja realmente excluir esses itens?";
+  }
+
+  if (confirm(message) == true) {
+    inputChecked.forEach((element) => {
+      arrayOrders = arrayOrders.filter(
+        (order) => order.numberOrder != element.parentNode.textContent
+      );
+    });
+
+    updateOrderTable();
+  }
 };
 
 btnNewOrder.addEventListener("click", newOrder);
@@ -326,3 +349,4 @@ btnCancel.addEventListener("click", cancelOrder);
 btnSave.addEventListener("click", saveOrder);
 selectType.addEventListener("change", filterOrdersByType);
 selectStatus.addEventListener("change", filterOrdersByStatus);
+btnDelete.addEventListener("click", deleteOrder);
