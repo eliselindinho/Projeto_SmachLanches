@@ -204,6 +204,30 @@ table {
   color: var(--color-button-border-terciary);
 }
 
+.delete {
+  margin-bottom: 16px;
+}
+
+#btnDelete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 19px;
+  width: 125px;
+  height: 38px;
+  border: 1px solid var(--color-button-secundary);
+  border-radius: 8px;
+  background-color: transparent;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-txt-fourth);
+}
+
+#btnDelete:hover {
+  cursor: pointer;
+}
+
 td button:hover {
   cursor: pointer;
 }
