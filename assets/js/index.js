@@ -57,6 +57,7 @@ let btnNewOrder = document.querySelector(".newOrder");
 let userInteractionSection = document.querySelector(".headerFunctions");
 let selectType = document.querySelector("#selectType");
 let selectStatus = document.querySelector("#selectStatus");
+let btnPrint = document.querySelector(".print");
 let bodyTable = document.querySelector("#tableBody");
 let firstCheckbox = document.querySelector("#checkboxHeader");
 let trImage = document.querySelector(".imgBasket-0");
@@ -317,6 +318,10 @@ let filterOrdersByStatus = () => {
   }
 };
 
+let printBtn = () => {
+  window.print();
+};
+
 let selectAllCheckbox = () => {
   selectCheckbox();
   let allInputCheckbox = document.querySelectorAll('input[type="checkbox"]');
@@ -368,6 +373,7 @@ btnSearch.addEventListener("click", valueInputSearch);
 btnAdd.addEventListener("click", addProduct);
 btnCancel.addEventListener("click", cancelOrder);
 btnSave.addEventListener("click", saveOrder);
+btnPrint.addEventListener("click", printBtn);
 selectType.addEventListener("change", filterOrdersByType);
 selectStatus.addEventListener("change", filterOrdersByStatus);
 firstCheckbox.addEventListener("click", selectAllCheckbox);

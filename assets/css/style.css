@@ -458,3 +458,21 @@ footer {
   text-align: center;
   background-color: var(--color-background);
 }
+
+@media print {
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    display: none;
+  }
+  .newOrder {
+    display: none;
+  }
+
+  .headerFunctions {
+    display: none;
+  }
+}
