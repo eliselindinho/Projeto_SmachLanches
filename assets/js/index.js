@@ -347,22 +347,21 @@ let deleteOrder = () => {
     message = "Deseja realmente excluir esses itens?";
   }
 
-  if (confirm(message) == true) {
-    inputChecked.forEach((element) => {
-      arrayOrders = arrayOrders.filter(
-        (order) => order.numberOrder != element.parentNode.textContent
-      );
-    });
-    updateOrderTable();
-  }
-
   if (inputChecked.length > 1) {
     feedBackDelete = "Pedidos excluídos com sucesso";
   } else {
     feedBackDelete = "Pedido excluído com sucesso";
   }
 
-  alert(feedBackDelete);
+  if (confirm(message) == true) {
+    inputChecked.forEach((element) => {
+      arrayOrders = arrayOrders.filter(
+        (order) => order.numberOrder != element.parentNode.textContent
+      );
+    });
+    alert(feedBackDelete);
+    updateOrderTable();
+  }
 
   userInteractionSection.setAttribute("class", "active headerFunctions");
   sectionBtnDelete.setAttribute("class", "inactive");
