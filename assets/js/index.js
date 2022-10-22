@@ -58,6 +58,8 @@ let selectType = document.querySelector("#selectType");
 let selectStatus = document.querySelector("#selectStatus");
 let bodyTable = document.querySelector("#tableBody");
 let trImage = document.querySelector(".imgBasket-0");
+let sectionBtnDelete = document.querySelector(".delete");
+let btnDelete = document.querySelector("#btnDelete");
 
 let inputRadio = document.getElementsByName("options");
 let inputSearchProduct = document.querySelector("#inputSearch");
